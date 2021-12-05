@@ -9,3 +9,28 @@
         MAVEN ----Built tool  (Gradle, Ant )
         Manage dependencies (libraries)
         Built: repeated steps when creating a project
+
+3. What is automation?
+        - If there are repeated steps & process, and you want to reduce human interaction, you can automate process
+        ** Benefits of Automation:
+        - Precision
+        - Reduce mistakes
+        - More accurate results
+        - Faster and save time for us******
+        - Save cost
+        - Auto generated reports and these reports can be sent automatically everyday to your colleagues.
+                        ( CI/CD Tools: Jenkins-- this one runs codes automatically and generate emails)
+4. What is Selenium?
+        * just a library (ready classes created for web automation)
+        * you can only automate web based applications, you can NOT do desktop apps automation
+
+5. In Selenium we will learn bunch of Methods:
+        #1 What is the method doing?
+        #2 Does it accept any arguments (parameters) ?
+        #3 Does it return anything? What is the return type?
+        #4 Does it throw an exception? // we need to handle the exception-----
+     example: get() method
+     #1- This gets the given url in an already opened browser
+     #2- This method accepts String as an argument-- url
+     #3- void method, not returning
+

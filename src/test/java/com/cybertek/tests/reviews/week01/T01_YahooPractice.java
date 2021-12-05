@@ -31,16 +31,14 @@ public class T01_YahooPractice {
         System.out.println("expectedTitle = " + expectedTitle);
         System.out.println("actualTitle = " + actualTitle);
 
-        if(actualTitle.contains(expectedTitle)){
+        if (actualTitle.contains(expectedTitle)) {
             System.out.println("Test Passed");
-        }else{
+        } else {
             System.out.println("Test Failed");
         }
 
         driver.close();
     }
-
-
 
 
 }
