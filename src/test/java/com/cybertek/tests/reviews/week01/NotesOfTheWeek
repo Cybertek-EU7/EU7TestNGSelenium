@@ -1,0 +1,11 @@
+1. IntelliJ Settings
+        mouse zoom: Settings->Editor -> General -> Mouse Control
+        how to find stuff:
+            - CTRL+Shift+F  looks inside the whole project
+            (MAC: CMND+Shift+F)
+            -CTRL+F: looks for only in this file
+
+2. When we create our Selenium project what is the build tool?
+        MAVEN ----Built tool  (Gradle, Ant )
+        Manage dependencies (libraries)
+        Built: repeated steps when creating a project
