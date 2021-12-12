@@ -14,8 +14,8 @@ Purpose of our dependencies:
 What do we test as a tester? Main Job?
         We need to compare Expected VS Actual
    * Actual comes from : From Application (WebPage)
-   * Expected comes from : SRS (system requirements specification)
-           Documentation
+   * Expected comes from : SRS (system requirements specification), Documentation
+
 
 In order to get the actual data from webpage wih automation, Selenium
 comes with ready methods:
@@ -24,23 +24,44 @@ comes with ready methods:
 
 2. Locate them (findElement() Method)
 
-3. Aplly an action (click, sendKeys....)
+3. Apply an action (click, sendKeys....)
 
 Locators:
     6 Locators (non-custom) - id, name, tagName, ClassName, LinlTExt, PartialLinkText
-        id locator: it is always unique, but problem can be dynamic
-        name locator: check if it is duplicate
+       # id locator: it is always unique, but problem can be dynamic
 
-        tagName: has to be only one of them or first
+       # name locator: check if it is duplicate
+
+       # tagName: has to be only one of them or first
                 this locator is good to use with findElements() method (List webelements)
 
-        className: has to be only one of them or first, if it has space
+       # className: has to be only one of them or first, if it has space
                 this locator is good to use with findElements() method (List webelements)
 
-        LinkText/Partial LinkText
+       # LinkText/Partial LinkText
             works with anchor tag ---->  <a> tag : text of the webelement
 
     2 Locators (custom) : Xpath --- CSS locators
+        # XPATH: Most useful 3 formulas that you can memorize
+        1 )  //tagName[@attribute='value']
+            //h1[@class='srp-controls__count-heading']
+        2 ) //tagName[.='text']
+            //a[.='Laptops']
+        3 ) //tagName[contains(@attribute,'value')]  : to find dynamic elements
+            //input[contains(@class,'btn-prim')]
+/html/body/header/table/tbody/tr/td[3]/form/table/tbody/tr/td[3]/input
+How many different categories of Xpath
+2: Absolute xpath, Relative xpath
+Absolute xpath: with '/' it looks child of each parent (parent to child hierarchy)
+Not Recommended
+Relative xpath:  '//'   look for any tag in anywhere in the page
+
+How to go from parent to child with xpath
+//tagName(xpath formula)/childTag   single slash
+
+from child to parent
+//childElementXpathFormula/..    single slash and double dots (we will use this a lot with dynamic webtable)
+
 
 P.I.Q.: What is the exception that you get the most?
 I am getting NoSuchElementException the most
