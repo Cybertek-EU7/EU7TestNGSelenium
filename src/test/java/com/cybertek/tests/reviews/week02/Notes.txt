@@ -29,10 +29,22 @@ comes with ready methods:
 Locators:
     6 Locators (non-custom) - id, name, tagName, ClassName, LinlTExt, PartialLinkText
         id locator: it is always unique, but problem can be dynamic
+        name locator: check if it is duplicate
 
+        tagName: has to be only one of them or first
+                this locator is good to use with findElements() method (List webelements)
+
+        className: has to be only one of them or first, if it has space
+                this locator is good to use with findElements() method (List webelements)
     2 Locators (custom) : Xpath --- CSS locators
 
-
+P.I.Q.: What is the exception that you get the most?
+I am getting NoSuchElementException the most
+1. Wrong locator (my mistake)
+2. Your locator is correct but Developer might have changed something
+3. Environmental problem---> syncronization  wait management (static wait--Thread.sleep(2000);)
+            Your JAVA code is very fast comparing to WebSite loading
+            We will learn dynamic waits.
 
 
 

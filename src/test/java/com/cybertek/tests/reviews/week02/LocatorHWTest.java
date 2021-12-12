@@ -27,7 +27,17 @@ public class LocatorHWTest {
 
         // search Selenium
 
-        WebElement searchBox = driver.findElement(By.id("gh-ac"));
+     // with ID locator  WebElement searchBox = driver.findElement(By.id("gh-ac"));// to duplicate a line CTRL+D CMND+D
+
+
+   //  with name locator  WebElement searchBox = driver.findElement(By.name("_nkw"));
+
+      // this is xpath with class name attribute
+       WebElement searchBox = driver.findElement(By.xpath("//input[@class='gh-tb ui-autocomplete-input']"));
+
+    //     WebElement searchBox = driver.findElement(By.className("gh-tb ui-autocomplete-input"));
+
+        //  for tagName  //input tag for search box reveals 7 items and my element is the 3rd one
 
         String expectedSearcItem = "Selenium";
 
