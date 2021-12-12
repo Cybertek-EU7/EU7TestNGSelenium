@@ -36,6 +36,10 @@ Locators:
 
         className: has to be only one of them or first, if it has space
                 this locator is good to use with findElements() method (List webelements)
+
+        LinkText/Partial LinkText
+            works with anchor tag ---->  <a> tag : text of the webelement
+
     2 Locators (custom) : Xpath --- CSS locators
 
 P.I.Q.: What is the exception that you get the most?

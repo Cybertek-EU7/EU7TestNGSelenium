@@ -43,6 +43,12 @@ public class LocatorHWTest {
 
         searchBox.sendKeys(expectedSearcItem);
 
+       WebElement searchButton = driver.findElement(By.id("gh-btn")); // locate the element
+       searchButton.click();                                           // apply action
+
+
+
+
         Thread.sleep(2000);
 
         driver.close();
