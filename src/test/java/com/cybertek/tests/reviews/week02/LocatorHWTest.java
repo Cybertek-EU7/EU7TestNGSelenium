@@ -16,7 +16,7 @@ public class LocatorHWTest {
             verify title contains Selenium
      */
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
 
         WebDriverManager.chromedriver().setup();  // handles all those downloading necessary driver for your operating system
@@ -44,12 +44,16 @@ public class LocatorHWTest {
         searchBox.sendKeys(expectedSearcItem);
 
        WebElement searchButton = driver.findElement(By.id("gh-btn")); // locate the element
-       searchButton.click();                                           // apply action
+       searchButton.click();  // apply action
 
+   WebElement searchResultElement = driver.findElement(By.xpath("//h1[@class='srp-controls__count-heading']"));
 
+   String searchResultText = searchResultElement.getText();
 
+   String [] arr = searchResultText.split(" ");
 
-        Thread.sleep(2000);
+        System.out.println("Number os search results = " + arr[0]);
+
 
         driver.close();
 
