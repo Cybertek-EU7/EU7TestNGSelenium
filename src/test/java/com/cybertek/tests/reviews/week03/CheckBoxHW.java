@@ -25,13 +25,12 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
     Can I out the same precondition to BeforeMethod? Yes
  */
     public WebDriver driver; // declare your variable/object globally and use it at every method
-    @BeforeClass             // annotations are there to effect your test flow
-    public void setClass(){
-        driver = WebDriverFactory.getDriver("chrome"); // initialize our driver object
-    }
+                 // annotations are there to effect your test flow
+
 
     @BeforeMethod
     public void openPage(){
+        driver = WebDriverFactory.getDriver("chrome"); // initialize our driver object
         driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
         driver.manage().window().maximize();
         // Login to WebPage
@@ -48,13 +47,9 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
         driver.close();
     }
 
-    @AfterClass
-    public void killSession(){
-        driver.quit();
-    }
 
 
-    @Test
+    @Test (priority = 1)
     public void checkBoxAll(){
         // Click on check all button
             WebElement checkAllButton = driver.findElement(By.linkText("Check All"));                          checkAllButton.click();
@@ -91,7 +86,7 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
 
     }
 
-    @Test
+    @Test (priority = 2)
     public void deletePersonTest(){
         String name = "Charles Dodgeson"; // if I change the name code test should still work
 // locator for person name cell: //*[contains(text(),'Steve Johns')]
