@@ -1,0 +1,67 @@
+return type of findElement method: WebElement
+What kind of exception does it throw? No such element exception
+What are the common reasons of no such element exception?
+    1. Our locator might be wrong
+    2. Maybe developer changed code
+    3. Synchronization: Thread.sleep (this method throws exception, and you need to handle it
+    you need to add exception to your signature)
+
+CSS Locators:
+- Part of the 8 locators we have in selenium
+- like Xpath, it allows us for creating custom locators
+- NOT limited to name, id or className attributes, you can use other attributes as well
+- You can move from a known element to an element which does not have any attribute
+
+2 different syntax:
+1. tagName[attribute='value'] ----> shortcut(if you want to be less specific) [attribute='value']
+
+2. second one can be used only with id and class
+tagName#iDValue         shortcut(if you want to be less specific) ---> #idValue
+tagName.classValue      shortcut(if you want to be less specific) ---> .ClassName
+
+if your css custom locator returns more candidates of WebElements
+<yourCSS>:nth-of-type(index): in oder to use this they need to be siblings(under same family)
+
+How to move from Parent to Child
+tagName[attribute='value'] > childTagName
+http://practice.cybertekschool.com/forgot_password
+div[id='content']>div>h2
+#content>div>h2
+
+How to move from child to parent with CSS? You can NOT do it with CSS
+With Xpath (XpathLOcator/..)
+
+PIQ: What are the differences between Xpath and CSS?
+1. CSS has shorter and more cleaner syntax, maybe little bit faster than xpath
+2. we can not locate using text with CSS, but with Xpath we can do it
+3. using index, for CSS they have to be under same parent
+
+Erdem's Strategy:
+First ID, (check dynamic)
+With Class name, check for spaces
+attribute and value (check if it is duplicate or first one)
+Using parent child relationtry
+try the 6 locators first if it does not work
+then look for custom locator
+
+For practice purpose: do the same tasks with different locators
+
+PIQ: How do you handle dynamic web elements?
+    How do you habdle web elelemnts that has dynamic attribute value?
+    Melek: how to understand? refresh
+           use custom locators and start with, ends with and contains
+
+
+
+
+
+
+
+
+
+isDisplayed() method:
+* if the webelement is displayed or Not
+* return type: boolean (true/false)
+* it does not accept any argument
+
+
