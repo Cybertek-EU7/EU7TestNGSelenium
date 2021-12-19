@@ -55,7 +55,7 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
     @Test
     public void checkBoxAll(){
         // Click on check all button
-            WebElement checkAllButton = driver.findElement(By.linkText("Check All"));                   checkAllButton.click();
+            WebElement checkAllButton = driver.findElement(By.linkText("Check All"));                          checkAllButton.click();
         // verify all the checkboxes are checked
 
     // (//input[@type='checkbox'])[1] for the first
@@ -74,6 +74,15 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
             String rowChechBoxLocator = "(//input[@type='checkbox'])["+i+"]"; // String Concatination
             WebElement rowCheckBox = driver.findElement(By.xpath(rowChechBoxLocator));
             Assert.assertTrue(rowCheckBox.isSelected(),"The CheckBox IS NOT selected");
+        }
+
+        WebElement unheckAllButton = driver.findElement(By.linkText("Uncheck All"));
+        unheckAllButton.click();
+        for (int i = 1; i <= 8 ; i++) {
+            String rowChechBoxLocator = "(//input[@type='checkbox'])["+i+"]"; // String Concatination
+            WebElement rowCheckBox = driver.findElement(By.xpath(rowChechBoxLocator));
+            // Assert False method  rowCheckBox.isSelected() = NO looking for a FALSE result
+            Assert.assertFalse(rowCheckBox.isSelected(),"The CheckBox IS STILL selected");
         }
 
 
