@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.util.ArrayList;
+
 public class CheckBoxHW {
 /*
 Test Case Verify CheckBox CheckAll and UncheckAll Buttons
@@ -91,23 +93,38 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
 
     @Test
     public void deletePersonTest(){
-        String name = "Steve Johns"; // if I change the name code test should still work
+        String name = "Charles Dodgeson"; // if I change the name code test should still work
 // locator for person name cell: //*[contains(text(),'Steve Johns')]
 // locator for checkBox of the person that I want to delete
 //   //*[contains(text(),'Steve Johns')]/preceding-sibling::*/input  (sibling method)
 //  //*[contains(text(),'Steve Johns')]/..//td[1]/input     (parent-child method)
 //   //td[2]//*[contains(text(),'Charles Dodgeson')]
 
-String locatorCheckBoxOfPerson = "//*[contains(text(),'"+name+"')]/preceding-sibling::*/input  (sibling method)";
+String locatorCheckBoxOfPerson = "//*[contains(text(),'"+name+"')]/preceding-sibling::*/input";
 
 WebElement checkBoxOfPerson = driver.findElement(By.xpath(locatorCheckBoxOfPerson));
 
 checkBoxOfPerson.click();
 
+WebElement deleteButton = driver.findElement(By.id("ctl00_MainContent_btnDelete"));
+deleteButton.click();
 
+// After I delete, I will get all the names and put them in a ArrayList then verfiy that deleted person is not in the list
 
+        // locator for the first person
+        // (//input[@type='checkbox'])[1]/../../td[2]
+        ArrayList<String> names = new ArrayList<>();
 
+        for (int i = 1; i <= 7; i++) {
+             String eachNameLocator = "(//input[@type='checkbox'])["+i+"]/../../td[2]";
+             WebElement eachNameElement = driver.findElement(By.xpath(eachNameLocator));
+             String eachName = eachNameElement.getText();
+                names.add(eachName);
+        }
 
+        System.out.println("names = " + names);
+
+        Assert.assertFalse(names.contains(name),"The Name is STILL there, could NOT delete");
 
 
     }
