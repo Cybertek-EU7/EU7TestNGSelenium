@@ -91,6 +91,24 @@ Test Case Verify CheckBox CheckAll and UncheckAll Buttons
 
     @Test
     public void deletePersonTest(){
+        String name = "Steve Johns"; // if I change the name code test should still work
+// locator for person name cell: //*[contains(text(),'Steve Johns')]
+// locator for checkBox of the person that I want to delete
+//   //*[contains(text(),'Steve Johns')]/preceding-sibling::*/input  (sibling method)
+//  //*[contains(text(),'Steve Johns')]/..//td[1]/input     (parent-child method)
+//   //td[2]//*[contains(text(),'Charles Dodgeson')]
+
+String locatorCheckBoxOfPerson = "//*[contains(text(),'"+name+"')]/preceding-sibling::*/input  (sibling method)";
+
+WebElement checkBoxOfPerson = driver.findElement(By.xpath(locatorCheckBoxOfPerson));
+
+checkBoxOfPerson.click();
+
+
+
+
+
+
 
     }
 
