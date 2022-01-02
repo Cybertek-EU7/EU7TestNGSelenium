@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class PopupsAndAlerts {
 
-    WebDriver driver;
+    WebDriver driver; // our driver is an instance of WebDriver interface
 
     @BeforeMethod
     public void setUp(){
@@ -43,7 +43,7 @@ public class PopupsAndAlerts {
        // driver.findElement(By.xpath("//button[1]")).click();
 
         //switch to JS alert pop up
-        Alert alert = driver.switchTo().alert();
+        Alert alert = driver.switchTo().alert(); // polymorphism: my alert object is an instance of Alert interface
         Thread.sleep(2000);
         alert.accept();
 
