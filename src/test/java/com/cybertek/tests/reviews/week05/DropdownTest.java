@@ -23,6 +23,9 @@ public class DropdownTest {
     4. Verify under Product Information, selected option is “MyMoney”
     5. Then select FamilyAlbum, make quantity 2, and click Calculate,
     6. Then verify Total is equal to Quantity*PricePerUnit
+
+
+    I am trying to see if I can push new stuff
      */
 
     WebDriver driver; // declare our reference for the object
