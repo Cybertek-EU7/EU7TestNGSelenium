@@ -4,6 +4,7 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -28,6 +29,7 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
 • Click on "Ok"
      */
     WebDriver driver;
+    int expectedPurchaseAmount = 0;
     @BeforeMethod
     public void setUp(){
         driver = WebDriverFactory.getDriver("chrome");
@@ -45,9 +47,15 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
         driver.findElement(By.partialLinkText(str)).click();
     }
 
-    public void productAdder(String category, String product){
+    public int productAdder(String category, String product){
         navigateTo(category);
         navigateTo(product);
+        // I want to get my expected price for that product
+        WebElement priceElement = driver.findElement(By.tagName("h3"));
+        String priceWholeText = priceElement.getText();
+        String[] arr = priceWholeText.split(" ");
+        int listPrice = Integer.parseInt(arr[0].substring(1));
+
         navigateTo("Add to cart");
         // handle pop up
         WebDriverWait wait = new WebDriverWait(driver,10);
@@ -55,12 +63,17 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
         Alert alert = driver.switchTo().alert();
         alert.accept();
         navigateTo("Home");
+        return listPrice;
     }
 
     @Test
     public void Test(){
         // Navigate to "Laptop" → "Sony vaio i5" and click on "Add to cart". Accept pop up confirmation.
-        productAdder("Laptop","Sony vaio i5");
+        expectedPurchaseAmount += productAdder("Laptop","Sony vaio i5");
+        // Navigate to "Laptop" → "Dell i7 8gb" and click on "Add to cart". Accept pop up confirmation.
+        expectedPurchaseAmount += productAdder("Laptop","Dell i7 8gb");
+
+        System.out.println("expectedPurchaseAmount = " + expectedPurchaseAmount);
     }
 
 }
