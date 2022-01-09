@@ -67,18 +67,25 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
         return listPrice;
     }
 
-    public int productRemover(String product){
+    public int productRemover(String product) throws InterruptedException {
+        // locator //tr[contains(.,'Sony vaio i5')]/td[4]/a
+        navigateTo("Cart");
+        WebElement deletButton = driver.findElement(By.xpath("//tr[contains(.,'"+product+"')]/td[4]/a"));
+        deletButton.click();
+        Thread.sleep(3000);
         return 0;
     }
 
     @Test
-    public void Test(){
+    public void Test() throws InterruptedException {
         // Navigate to "Laptop" → "Sony vaio i5" and click on "Add to cart". Accept pop up confirmation.
         expectedPurchaseAmount += productAdder("Laptop","Sony vaio i5");
         // Navigate to "Laptop" → "Dell i7 8gb" and click on "Add to cart". Accept pop up confirmation.
         expectedPurchaseAmount += productAdder("Laptop","Dell i7 8gb");
 
         System.out.println("expectedPurchaseAmount = " + expectedPurchaseAmount);
+
+        expectedPurchaseAmount -= productRemover("Sony vaio i5");
     }
 
 }
