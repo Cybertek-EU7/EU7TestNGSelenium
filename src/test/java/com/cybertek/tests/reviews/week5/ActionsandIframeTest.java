@@ -34,6 +34,8 @@ public class ActionsandIframeTest {
 
     @Test
     public void Test() throws InterruptedException {
+
+        Thread.sleep(1000);
         //2. Switch to iframe.
         // We are switching to iframe using id attribute value and switchTo method.
         driver.switchTo().frame("iframeResult");
