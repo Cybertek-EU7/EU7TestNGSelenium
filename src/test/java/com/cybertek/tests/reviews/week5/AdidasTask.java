@@ -27,6 +27,10 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
 • Capture and log purchase Id and Amount.
 • Assert purchase amount equals expected.
 • Click on "Ok"
+
+HW: finish the task by returning deleted product price
+capture expectedPurchaseAmount dynamically
+Do the rest of the task, use Faker class for the form
      */
     WebDriver driver;
     int expectedPurchaseAmount = 0;
