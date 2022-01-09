@@ -51,6 +51,8 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
         navigateTo(category);
         navigateTo(product);
         // I want to get my expected price for that product
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h3")));
         WebElement priceElement = driver.findElement(By.tagName("h3"));
         String priceWholeText = priceElement.getText();
         String[] arr = priceWholeText.split(" ");
@@ -58,12 +60,15 @@ You have to implement the following Web automated checks over our DEMO ONLINE SH
 
         navigateTo("Add to cart");
         // handle pop up
-        WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
         alert.accept();
         navigateTo("Home");
         return listPrice;
+    }
+
+    public int productRemover(String product){
+        return 0;
     }
 
     @Test
