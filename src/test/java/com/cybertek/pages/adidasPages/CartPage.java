@@ -29,7 +29,12 @@ public class CartPage extends BasePageForAdidas{
 
     public void fillForm(){
         Faker faker = new Faker();
-
+        nameFake.sendKeys(faker.name().fullName());
+        country.sendKeys(faker.country().name());
+        city.sendKeys(faker.country().capital());
+        card.sendKeys(faker.finance().creditCard());
+        month.sendKeys(""+faker.number().numberBetween(1,12));
+        year.sendKeys(""+faker.number().numberBetween(2022,2025));
 
     }
 

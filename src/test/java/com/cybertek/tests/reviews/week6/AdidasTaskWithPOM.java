@@ -33,8 +33,14 @@ public class AdidasTaskWithPOM extends TestBaseTwo {
         cartPage.placeOrderButton.click();
 
         // need to fill up the form, I want to create a method that fills up the form
+        cartPage.fillForm();
 
-
+        /*
+ • Click on "Purchase"
+• Capture and log purchase Id and Amount.
+• Assert purchase amount equals expected.
+• Click on "Ok"
+         */
 
 //        productPage.navigateTo("Laptops");
 //        productPage.navigateTo("Sony vaio i5");
