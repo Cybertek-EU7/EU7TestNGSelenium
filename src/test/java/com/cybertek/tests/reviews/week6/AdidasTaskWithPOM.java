@@ -25,6 +25,8 @@ public class AdidasTaskWithPOM extends TestBaseTwo {
 
         System.out.println("expectedPurchaseAmount = " + expectedPurchaseAmount);
 
+        productPage.navigateTo("Cart");
+
 
 //        productPage.navigateTo("Laptops");
 //        productPage.navigateTo("Sony vaio i5");
