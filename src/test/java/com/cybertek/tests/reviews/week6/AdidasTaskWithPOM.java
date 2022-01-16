@@ -12,6 +12,8 @@ public class AdidasTaskWithPOM extends TestBaseTwo {
     @Test
     public void PurchaseTest(){
 
+
+
         // Navigate to "Laptop" → "Sony vaio i5" and click on "Add to cart". Accept pop up confirmation.
         expectedPurchaseAmount += productPage.productAdder("Laptop","Sony vaio i5");
         // Navigate to "Laptop" → "Dell i7 8gb" and click on "Add to cart". Accept pop up confirmation.
@@ -21,6 +23,13 @@ public class AdidasTaskWithPOM extends TestBaseTwo {
 
         expectedPurchaseAmount -= productPage.productRemover("Sony vaio i5");
 
+        System.out.println("expectedPurchaseAmount = " + expectedPurchaseAmount);
+
+
+//        productPage.navigateTo("Laptops");
+//        productPage.navigateTo("Sony vaio i5");
+//        System.out.println("productPage.priceElement.getText() = " + productPage.priceElement.getText());
+//        System.out.println("productPage.productDescription.getText() = " + productPage.productDescription.getText());
     }
 
 
