@@ -1,6 +1,5 @@
 package com.cybertek.tests.day12_properties_driver_tests;
 
-import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
