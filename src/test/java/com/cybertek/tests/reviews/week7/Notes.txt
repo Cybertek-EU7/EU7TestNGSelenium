@@ -14,3 +14,17 @@ Today's Topics:
 * Exel Documents Read and Write, How to use ExelUtil Class
     - How to read from an excel file
     - How to create an excel file
+
+    Question: for every new project .we need to create these classes like test base , configuration . properties , configuration reader ?????
+    1. New Application ----> New Project : Testing Framework (TestNG, BDD: Behavioral Driven Development: Cucumber Framework)
+                - MAVEN project: it requires pom.xml (created first) managing the project
+                            - pom.xml: dependencies, JDK level, Maven tools will be controlled
+                - Utility Package: Driver, ConfigurationReader(to read properties), Project based utility classes
+                - Parent of Test Cases: TestBase
+                - If you are using Page Object Model design concept: need to create pages of your application
+                - Create Test Cases
+
+    XML Runners:
+        XML files have no predefined tags
+        pom.xml ---> only means something to MAVEN
+        testNGRunners make sense only for TestNG
