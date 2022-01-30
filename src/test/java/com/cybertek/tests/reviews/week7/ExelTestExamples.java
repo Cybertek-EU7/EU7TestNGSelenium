@@ -54,10 +54,10 @@ public class ExelTestExamples {
 
         for (int i = 1; i < readFile.rowCount()-1; i++) {
              Row eachRow = sheet.createRow(i);
-             eachRow.createCell(0).setCellValue(users.get(i).get("username"));
-             eachRow.createCell(1).setCellValue(users.get(i).get("password"));
-             eachRow.createCell(2).setCellValue(users.get(i).get("firstname"));
-             eachRow.createCell(3).setCellValue(users.get(i).get("lastname"));
+             eachRow.createCell(0).setCellValue(users.get(i-1).get("username"));
+             eachRow.createCell(1).setCellValue(users.get(i-1).get("password"));
+             eachRow.createCell(2).setCellValue(users.get(i-1).get("firstname"));
+             eachRow.createCell(3).setCellValue(users.get(i-1).get("lastname"));
     }
 
         FileOutputStream fileOutputStream = new FileOutputStream("src/test/resources/MyUsers.xlsx");
