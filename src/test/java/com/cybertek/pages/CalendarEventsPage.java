@@ -17,4 +17,7 @@ public class CalendarEventsPage extends BasePage {
     @FindBy(css = "div[class='btn btn-link dropdown-toggle']")
     public WebElement optionsLink;
 
+    @FindBy(css = "input[type='number']")
+    public WebElement pageNumber;
+
 }
