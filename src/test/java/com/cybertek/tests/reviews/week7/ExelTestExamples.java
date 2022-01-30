@@ -8,8 +8,9 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +20,7 @@ public class ExelTestExamples {
 
     List<Map<String,String>> users = new ArrayList<>();
     @Test
-    public void createExcelFile() throws FileNotFoundException {
+    public void createExcelFile() throws IOException {
         ExcelUtil readFile = new ExcelUtil("src/test/resources/Vytracktestdata.xlsx","QA3-short");
 
         int rowCount = readFile.rowCount(); // This one gives how many rows I have
@@ -59,7 +60,16 @@ public class ExelTestExamples {
              eachRow.createCell(3).setCellValue(users.get(i).get("lastname"));
     }
 
-        FileOutputStream fileOutputStream = new FileOutputStream("MyUsers.xlsx");
+        FileOutputStream fileOutputStream = new FileOutputStream("src/test/resources/MyUsers.xlsx");
+
+        workbook.write(fileOutputStream);
+        fileOutputStream.close();
+        workbook.close();
+        /*
+        3 more weeks for UI Automation
+        2 weeks for DataBase (easiest topic)
+        3 weeks for API (Mobile Testing as optional videos)
+         */
 
     }
 
