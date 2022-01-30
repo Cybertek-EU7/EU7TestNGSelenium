@@ -13,15 +13,15 @@ public class DDFLoginTest extends TestBase {
     @DataProvider
     public Object [][] userData(){
 
-        ExcelUtil qa3short = new ExcelUtil("src/test/resources/Vytracktestdata.xlsx","QA3-all");
+        ExcelUtil qa2short = new ExcelUtil("src/test/resources/Vytracktestdata.xlsx","QA2-short");
 
-        String [][] dataArray =qa3short.getDataArrayWithoutFirstRow();
+        String [][] dataArray =qa2short.getDataArrayWithoutFirstRow();
 
         return dataArray;
     }
 
     @Test(dataProvider = "userData")
-    public void test1(String username,String password,String firstName,String lastName){
+    public void test1(String username,String password,String firstName,String lastName, String result){
         extentLogger=report.createTest("Test "+firstName+" "+lastName);
         LoginPage loginPage = new LoginPage();
 
