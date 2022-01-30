@@ -58,6 +58,7 @@ public class Driver {
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driver = new SafariDriver();
                     break;
+
             }
 
 

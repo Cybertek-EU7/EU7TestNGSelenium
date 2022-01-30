@@ -1,0 +1,11 @@
+Today's Topics:
+    * Vytrack HW together
+    - Reporting, Screenshot
+    - TestNG Framework : pom.xml, conf.properties, ConfigurationReader, TestBaseHW, @Annotations, Page Object Models
+    - Verifying status codes HW : Data Provider and Excel File
+            * Practicing Data Driven Testing
+
+* Reporting With Extent Reports:
+    Step 1: Get the dependency
+    Step 2: create object for building the report
+    Step 3: you need to create another object for HTML report file

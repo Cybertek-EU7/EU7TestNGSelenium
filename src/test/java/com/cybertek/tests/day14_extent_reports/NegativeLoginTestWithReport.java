@@ -1,6 +1,7 @@
 package com.cybertek.tests.day14_extent_reports;
 
 import com.cybertek.pages.LoginPage;
+import com.cybertek.tests.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -45,7 +46,7 @@ public class NegativeLoginTestWithReport extends TestBase {
         loginPage.loginBtn.click();
 
         extentLogger.info("verify page url");
-        Assert.assertEquals(driver.getCurrentUrl(),"https://qa1.vytrack.com/user/login");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://qa1.vytrack.com/user/logi");
         extentLogger.pass("PASSED");
     }
 

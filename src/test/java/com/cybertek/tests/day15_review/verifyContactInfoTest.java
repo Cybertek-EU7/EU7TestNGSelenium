@@ -4,6 +4,7 @@ import com.cybertek.pages.ContactInfoPage;
 import com.cybertek.pages.ContactsPage;
 import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
+import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
