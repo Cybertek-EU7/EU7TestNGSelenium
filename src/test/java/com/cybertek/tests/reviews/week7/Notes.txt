@@ -9,3 +9,8 @@ Today's Topics:
     Step 1: Get the dependency
     Step 2: create object for building the report
     Step 3: you need to create another object for HTML report file
+
+
+* Exel Documents Read and Write, How to use ExelUtil Class
+    - How to read from an excel file
+    - How to create an excel file
