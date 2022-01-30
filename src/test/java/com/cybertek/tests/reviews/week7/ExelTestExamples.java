@@ -52,7 +52,7 @@ public class ExelTestExamples {
              cell.setCellValue(readFile.getColumnsNames().get(i));  // put data in the cell
         }
 
-        for (int i = 1; i < readFile.rowCount()-1; i++) {
+        for (int i = 1; i < readFile.rowCount(); i++) {
              Row eachRow = sheet.createRow(i);
              eachRow.createCell(0).setCellValue(users.get(i-1).get("username"));
              eachRow.createCell(1).setCellValue(users.get(i-1).get("password"));
